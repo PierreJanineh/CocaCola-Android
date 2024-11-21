@@ -7,4 +7,5 @@
     <color name="black_700">#050505</color>
     <color name="red_200">#F48F8F</color>
     <color name="red_700">#E91E1E</color>
+    <color name="profile_image_bg">#FFF9C4</color>
 </resources>

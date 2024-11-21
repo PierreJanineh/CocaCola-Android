@@ -4,4 +4,8 @@
     <string name="title_gifts_shop">חנות המתנות</string>
     <string name="title_volunteering">עושים טוב</string>
     <string name="title_games">משחקים</string>
+    <string name="logo_desc">Logo</string>
+    <string name="profile_picture_desc">Profile picture</string>
+    <string name="lids_count_desc">Lids count</string>
+    <string name="angels_count_desc">Angels count</string>
 </resources>
