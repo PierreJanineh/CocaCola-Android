@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CocaCola</string>
+    <string name="title_home">בית</string>
+    <string name="title_gifts_shop">חנות המתנות</string>
+    <string name="title_volunteering">עושים טוב</string>
+    <string name="title_games">משחקים</string>
 </resources>

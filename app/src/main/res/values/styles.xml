@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavigationText">
+        <item name="android:textSize">14sp</item>
+        <!-- Optional: customize other text properties -->
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/fbspacer_bold</item>
+    </style>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_24"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_shop"
+        android:icon="@drawable/ic_gift_shop_24"
+        android:title="@string/title_gifts_shop" />
+
+    <item
+        android:id="@+id/navigation_coke"
+        android:enabled="false"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_volunteering"
+        android:icon="@drawable/ic_angel_24"
+        android:title="@string/title_volunteering" />
+
+    <item
+        android:id="@+id/navigation_games"
+        android:icon="@drawable/ic_game_controller"
+        android:title="@string/title_games" />
+
+</menu>
