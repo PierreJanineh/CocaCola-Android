@@ -1,11 +1,11 @@
 package com.pierrejanineh.cocacola.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.pierrejanineh.cocacola.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.pierrejanineh.cocacola.ui.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
