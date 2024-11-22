@@ -1,4 +1,4 @@
-package com.pierrejanineh.cocacola.ui.fragments.home
+package com.pierrejanineh.cocacola.ui.fragments.home.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.pierrejanineh.cocacola.databinding.CardSingleAdBinding
-import com.pierrejanineh.cocacola.logic.SingleAd
+import com.pierrejanineh.cocacola.data.model.SingleAd
 
 class AdsAdapter(private val context: Context) : RecyclerView.Adapter<AdsAdapter.ViewHolder>() {
 

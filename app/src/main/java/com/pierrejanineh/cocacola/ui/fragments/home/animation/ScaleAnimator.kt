@@ -1,4 +1,4 @@
-package com.pierrejanineh.cocacola.ui.fragments.home
+package com.pierrejanineh.cocacola.ui.fragments.home.animation
 
 import android.view.View
 import androidx.core.view.children

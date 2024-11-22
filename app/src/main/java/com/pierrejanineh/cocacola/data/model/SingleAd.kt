@@ -1,4 +1,4 @@
-package com.pierrejanineh.cocacola.logic
+package com.pierrejanineh.cocacola.data.model
 
 data class SingleAd(
     val imageUrl: String,

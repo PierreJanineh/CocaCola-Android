@@ -1,4 +1,4 @@
-package com.pierrejanineh.cocacola.ui.fragments.home
+package com.pierrejanineh.cocacola.ui.fragments.home.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.pierrejanineh.cocacola.ui
+package com.pierrejanineh.cocacola.ui.activities
 
 import android.os.Bundle
 import androidx.viewpager2.widget.MarginPageTransformer

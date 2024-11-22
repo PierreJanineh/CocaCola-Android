@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pierrejanineh.cocacola.databinding.FragmentHomeBinding
-import com.pierrejanineh.cocacola.logic.SingleAd
+import com.pierrejanineh.cocacola.data.repository.AdRepository
+import com.pierrejanineh.cocacola.ui.fragments.home.adapter.AdsAdapter
+import com.pierrejanineh.cocacola.ui.fragments.home.adapter.EndlessScrollAdapter
+import com.pierrejanineh.cocacola.ui.fragments.home.animation.CenterSnapHelper
+import com.pierrejanineh.cocacola.ui.fragments.home.animation.ScaleCardAnimator
 
 class HomeFragment : Fragment() {
 
@@ -50,12 +54,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadItems() {
-        val items = listOf(
-            SingleAd( "https://cdn.dribbble.com/userupload/10026606/file/original-85577401a3636fc28a7d8c4af4355299.jpg?resize=2048x2560&vertical=center", "לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.", "סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת. קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. קונדימנטום קורוס בליקרה, נונסטי קלובר בריקנה סטום, לפריקך תצטריק לרטי.\n"),
-            SingleAd( "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2GjswAa3h3_44Uz-TiKXUERaPcKjq2FGxQ&s", "כותרת 2", "גוף"),
-            SingleAd( "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN8Cio9bKOUd-YUTjDdadi3QgxZ7ZgtfpvSg&s", "כותרת 3", "גוף")
-        )
-        adsAdapter.setItems(items)
+        adsAdapter.setItems(AdRepository().getAds())
     }
 
     override fun onDestroyView() {
