@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.pierrejanineh.cocacola.ui.fragments.GamesFragment
 import com.pierrejanineh.cocacola.ui.fragments.GiftShopFragment
-import com.pierrejanineh.cocacola.ui.fragments.HomeFragment
+import com.pierrejanineh.cocacola.ui.fragments.home.HomeFragment
 import com.pierrejanineh.cocacola.ui.fragments.VolunteeringFragment
 
 class ViewPagerAdapter(

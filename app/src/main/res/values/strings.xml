@@ -1,12 +1,21 @@
 <resources>
     <string name="app_name">CocaCola</string>
+    <!-- MainActivity -->
     <string name="title_home">בית</string>
     <string name="title_gifts_shop">חנות המתנות</string>
     <string name="title_volunteering">עושים טוב</string>
     <string name="title_games">משחקים</string>
     <string name="title_coke">מה שותים?</string>
+
+    <!-- Image Content Descriptions -->
     <string name="logo_desc">Logo</string>
     <string name="profile_picture_desc">Profile picture</string>
     <string name="lids_count_desc">Lids count</string>
     <string name="angels_count_desc">Angels count</string>
+    <string name="ad_image_desc">Ad item card image</string>
+    <string name="ad_icon_desc">Ad item card icon</string>
+
+    <!--  Default Values  -->
+    <string name="ad_title_default_value">כותרת</string>
+    <string name="ad_heading_default_value">גוף</string>
 </resources>
