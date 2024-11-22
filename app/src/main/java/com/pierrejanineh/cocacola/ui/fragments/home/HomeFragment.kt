@@ -36,12 +36,16 @@ class HomeFragment : Fragment() {
         adsAdapter = AdsAdapter(requireContext())
 
         binding.adsRecyclerView.apply {
-            adapter = adsAdapter
+            adapter = EndlessScrollAdapter(adsAdapter)
             layoutManager = LinearLayoutManager(
                 context,
                 LinearLayoutManager.HORIZONTAL,
                 false
             )
+
+            CenterSnapHelper().attachToRecyclerView(this)
+
+            addOnScrollListener(ScaleCardAnimator())
         }
     }
 
