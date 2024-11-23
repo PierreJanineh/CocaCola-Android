@@ -1,63 +1,31 @@
 package com.pierrejanineh.cocacola.ui.fragments.home.animation
 
-import android.view.View
 import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.abs
 
 class ScaleCardAnimator : RecyclerView.OnScrollListener() {
 
-    private companion object {
-        const val MAX_SCALE = 1f
-        const val MIN_SCALE = 0.96f
-        const val SCALE_DIFFERENCE = MAX_SCALE - MIN_SCALE
+    companion object {
+        private const val MAX_SCALE = 1f
+        private const val MIN_SCALE = 0.9f
     }
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
+
         val centerX = recyclerView.width / 2f
 
         recyclerView.children.forEach { child ->
-            val childCenterX = child.centerX
-            val scrollState = ScrollState.from(dx, childCenterX, centerX.toInt())
-            val progress = scrollState.calculateProgress(childCenterX.toFloat(), centerX)
-            val scale = MIN_SCALE + (SCALE_DIFFERENCE * progress)
+            val childCenterX = (child.left + child.right) / 2f
+            val distanceFromCenter = abs(childCenterX - centerX)
 
-            child.applyScale(scale)
+            // Calculate scale based on distance from center
+            val scale = MAX_SCALE - (distanceFromCenter / recyclerView.width) * (MAX_SCALE - MIN_SCALE)
+
+            // Apply the scale, constrained between MIN_SCALE and MAX_SCALE
+            child.scaleX = scale.coerceIn(MIN_SCALE, MAX_SCALE)
+            child.scaleY = scale.coerceIn(MIN_SCALE, MAX_SCALE)
         }
-    }
-
-    private enum class ScrollState(
-        val calculateProgress: (childCenterX: Float, centerX: Float) -> Float
-    ) {
-        MOVING_RIGHT_FROM_LEFT(
-            { childCenter, center -> (childCenter / center).coerceIn(0f, 1f) }
-        ),
-        MOVING_RIGHT_FROM_RIGHT(
-            { childCenter, center -> 1f - (childCenter - center) / center }
-        ),
-        MOVING_LEFT_FROM_RIGHT(
-            { childCenter, center -> 1f - (childCenter - center) / center }
-        ),
-        MOVING_LEFT_FROM_LEFT(
-            { childCenter, center -> childCenter / center }
-        );
-
-        companion object {
-            fun from(dx: Int, childCenterX: Int, centerX: Int) = when {
-                dx > 0 && childCenterX < centerX -> MOVING_RIGHT_FROM_LEFT
-                dx > 0 && childCenterX >= centerX -> MOVING_RIGHT_FROM_RIGHT
-                dx < 0 && childCenterX > centerX -> MOVING_LEFT_FROM_RIGHT
-                //dx < 0 && childCenterX <= centerX
-                else -> MOVING_LEFT_FROM_LEFT
-            }
-        }
-    }
-
-    private val View.centerX: Int
-        get() = (left + right) / 2
-
-    private fun View.applyScale(scale: Float) {
-        scaleX = scale
-        scaleY = scale
     }
 }

@@ -51,6 +51,8 @@
         app:layout_constraintTop_toTopOf="@id/lids_count_image"
         app:layout_constraintBottom_toBottomOf="@id/lids_count_image"
         app:layout_constraintStart_toEndOf="@id/lids_count_image"
+        android:fontFamily="@font/fbspacer_regular"
+        android:textSize="@dimen/points_text_size"
         android:text="172"/>
 
     <ImageView
@@ -73,6 +75,8 @@
         app:layout_constraintTop_toTopOf="@id/angels_count_image"
         app:layout_constraintBottom_toBottomOf="@id/angels_count_image"
         app:layout_constraintStart_toEndOf="@id/angels_count_image"
+        android:fontFamily="@font/fbspacer_regular"
+        android:textSize="@dimen/points_text_size"
         android:text="2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout >
